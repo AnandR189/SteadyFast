@@ -1,7 +1,44 @@
-﻿
+﻿@model SteadyFast.Models.Account.LoginModel
+
 @{
     ViewData["Title"] = "Login";
 }
 
-<h1>Login</h1>
+<div class="container mt-5" style="max-width:450px;">
+    <div class="card shadow">
+        <div class="card-header text-center bg-dark text-white">
+            <h4>Login</h4>
+        </div>
 
+        <div class="card-body">
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger">@ViewBag.Error</div>
+            }
+
+            <!-- FORM START -->
+            <form asp-controller="Account" asp-action="Login" method="post">
+
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input asp-for="Email" class="form-control" placeholder="Enter email" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Password</label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Enter password" />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+
+            </form>
+            <!-- FORM END -->
+
+            <div class="text-center mt-3">
+                <a asp-action="Register" asp-controller="Account">Create Account</a>
+            </div>
+
+        </div>
+    </div>
+</div>
