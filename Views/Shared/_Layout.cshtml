@@ -15,84 +15,140 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="~/css/site.css" />
 
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
+        /* Active link underline + color */
+        .active-link {
+            color: #ff7a1a !important;
+            position: relative;
+        }
+
+            .active-link::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                width: 100%;
+                height: 2px;
+                background-color: #ff7a1a;
+            }
         body {
             background: #f5f6fa;
         }
 
-        .navbar-brand {
-            font-weight: 600;
-            color: #0d1b2a !important;
+        /* ===== NAVBAR STYLING ===== */
+        .custom-navbar {
+            background: linear-gradient(90deg, #0d1b2a, #1b263b);
+            padding: 12px 0;
         }
 
-        .nav-link {
+        .navbar-brand {
+            font-weight: 600;
+            color: #ffffff !important;
+        }
+
+        /* Center menu links */
+        .nav-white {
+            color: #ffffff !important;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+
+            .nav-white:hover {
+                color: #ff7a1a !important;
+            }
+
+        /* Login link (orange text) */
+        .login-link {
+            color: #ff7a1a !important;
             font-weight: 500;
         }
 
-        .btn-orange {
-            background-color: #ea58;
+        /* Sign in button */
+        .btn-signin {
+            background-color: #ff7a1a;
             color: white;
+            font-weight: 500;
+            border-radius: 6px;
+            padding: 6px 14px;
         }
 
-            .btn-orange:hover {
-                background-color: #c2410c;
+            .btn-signin:hover {
+                background-color: #e66a00;
                 color: white;
             }
 
+        /* ===== FOOTER ===== */
         footer {
             background: #0d1b2a;
             color: white;
             padding: 30px 0;
-            margin-top: 60px;
         }
     </style>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container">
 
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+            <!-- Logo -->
+            <a class="navbar-brand text-white fw-semibold"
+               asp-controller="Home" asp-action="Index">
                 SteadyFast
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <button class="navbar-toggler bg-light"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navMenu">
 
-                <!-- Left menu -->
+                <!-- Center Menu -->
                 <ul class="navbar-nav mx-auto">
+
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link nav-white @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active-link" : "")"
+                           asp-controller="Home" asp-action="Index">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Tips">Tips</a>
+                        <a class="nav-link nav-white @(ViewContext.RouteData.Values["action"]?.ToString() == "Tips" ? "active-link" : "")"
+                           asp-controller="Home" asp-action="Tips">Tips</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                        <a class="nav-link nav-white @(ViewContext.RouteData.Values["action"]?.ToString() == "About" ? "active-link" : "")"
+                           asp-controller="Home" asp-action="About">About</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a>
+                        <a class="nav-link nav-white @(ViewContext.RouteData.Values["action"]?.ToString() == "Contact" ? "active-link" : "")"
+                           asp-controller="Home" asp-action="Contact">Contact</a>
                     </li>
+
                 </ul>
 
-                <!-- Right menu -->
-                <ul class="navbar-nav">
+                <!-- Right Side -->
+                <ul class="navbar-nav align-items-center">
 
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                        <a class="nav-link login-link"
+                           asp-controller="Account" asp-action="Login">
+                            Login
+                        </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="btn btn-orange ms-2" asp-controller="Account" asp-action="Register">
-                            Sign Up
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-signin"
+                           asp-controller="Account" asp-action="Register">
+                            Sign in
                         </a>
                     </li>
 
@@ -103,20 +159,20 @@
     </nav>
 
     <!-- MAIN CONTENT -->
-    <div class="container mt-4">
-        @RenderBody()
-    </div>
+    <main class="container-fluid m-4>
+        <div class="container mt-4">
+            @RenderBody()
+        </div>
+    </main>
 
     <!-- FOOTER -->
-    <footer class="fixed-bottom">
-        <div class="container text-center ">
+    <footer class="mt-auto">
+        <div class="container text-center py-4">
             <h5>SteadyFast</h5>
             <p>Reliable mechanical repairs at your doorstep.</p>
-
             <small>© @DateTime.Now.Year SteadyFast. All rights reserved.</small>
         </div>
     </footer>
-
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

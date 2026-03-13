@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .about-section {
+        background: #f4f6f9;
+        padding: 80px 0;
+    }
+
+    .about-title {
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .about-subtext {
+        color: #6c757d;
+        max-width: 700px;
+        margin: 0 auto 40px;
+    }
+
+    .feature-box {
+        background: white;
+        padding: 18px 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        font-weight: 500;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+
+    .stats-number {
+        font-size: 28px;
+        font-weight: 700;
+        color: #2563eb;
+    }
+
+    .stats-label {
+        font-size: 14px;
+        color: #6c757d;
+    }
+
+    .team-section {
+        margin-top: 70px;
+    }
+
+    .team-img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-bottom: 15px;
+    }
+
+    .team-name {
+        font-weight: 600;
+    }
+
+    .team-role {
+        font-size: 14px;
+        color: #6c757d;
+    }
+</style>
+
+<section class="about-section text-center">
+
+    <div class="container">
+
+        <!-- Title -->
+        <h2 class="about-title">About SteadyFast</h2>
+        <p class="about-subtext">
+            SteadyFast is a nationwide 24/7 roadside assistance platform connecting stranded drivers
+            to verified mechanics in minutes.
+        </p>
+
+        <!-- Mission -->
+        <h4 class="fw-bold mt-4">Our Mission</h4>
+        <p class="about-subtext">
+            To make every road safer by providing fast, reliable, and affordable roadside assistance anywhere.
+        </p>
+
+        <!-- Why Choose -->
+        <h4 class="fw-bold mt-5 mb-4">Why Choose SteadyFast?</h4>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3">
+                <div class="feature-box">24/7 Instant Support</div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box">Verified Mechanics</div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box">Nationwide Coverage</div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box">Transparent Pricing</div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <div class="stats-number">50,000+</div>
+                <div class="stats-label">Drivers Helped</div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-number">1,200+</div>
+                <div class="stats-label">Partner Mechanics</div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-number">120+</div>
+                <div class="stats-label">Cities Covered</div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-number">4.8 ★</div>
+                <div class="stats-label">Average Rating</div>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div class="team-section">
+            <h4 class="fw-bold mb-4">Meet Our Team</h4>
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-3 text-center">
+                    <img src="/Images/my photo.jpg" class="team-img" alt="Member 1" />
+                    <div class="team-name">Disha Rudakiya</div>
+                    <div class="team-role">Founder & CEO</div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <img src="/Images/anand.jpg" class="team-img" alt="Member 2" />
+                    <div class="team-name">Anand Raythatha</div>
+                    <div class="team-role">Operations Head</div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <img src="/Images/h.jpg" class="team-img" alt="Member 3" />
+                    <div class="team-name">Martin Patel</div>
+                    <div class="team-role">Technical Lead</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>

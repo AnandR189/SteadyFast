@@ -67,7 +67,7 @@ namespace SteadyFast.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Index","Home");
         }
-
+        
 
     }
 }

@@ -4,39 +4,123 @@
     ViewData["Title"] = "Login";
 }
 
-<div class="container mt-5" style="max-width:450px;">
-    <div class="card shadow">
-        <div class="card-header text-center bg-dark text-white">
-            <h4>Login</h4>
-        </div>
+<style>
+    body {
+        background-color: #eef1f5;
+    }
 
-        <div class="card-body">
+    .login-wrapper {
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 480px;
+        border: 2px solid #ff7a1a;
+        border-radius: 18px;
+    }
+
+    .brand-title {
+        font-weight: 600;
+    }
+
+    .brand-subtitle {
+        font-size: 14px;
+        color: #6c757d;
+    }
+
+    .form-control:focus {
+        border-color: #ff7a1a;
+        box-shadow: 0 0 0 0.2rem rgba(255, 122, 26, 0.25);
+    }
+
+    .btn-orange {
+        background-color: #ff7a1a;
+        color: white;
+        font-weight: 500;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(255, 122, 26, 0.3);
+    }
+
+        .btn-orange:hover {
+            background-color: #e66a00;
+            color: white;
+        }
+
+    .google-btn {
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+
+    .bottom-text {
+        font-size: 14px;
+    }
+
+        .bottom-text a {
+            color: #0d6efd;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+            .bottom-text a:hover {
+                text-decoration: underline;
+            }
+</style>
+
+<div class="login-wrapper">
+    <div class="card shadow login-card">
+        <div class="card-body p-4">
+
+            <!-- Title -->
+            <div class="text-center mb-4">
+                <h3 class="brand-title">SteadyFast</h3>
+                <div class="brand-subtitle">Welcome back!</div>
+            </div>
 
             @if (ViewBag.Error != null)
             {
                 <div class="alert alert-danger">@ViewBag.Error</div>
             }
 
-            <!-- FORM START -->
             <form asp-controller="Account" asp-action="Login" method="post">
 
                 <div class="mb-3">
-                    <label>Email</label>
-                    <input asp-for="Email" class="form-control" placeholder="Enter email" />
+                    <input asp-for="Email" class="form-control" placeholder="Email Address" />
                 </div>
 
                 <div class="mb-3">
-                    <label>Password</label>
-                    <input asp-for="Password" type="password" class="form-control" placeholder="Enter password" />
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <!-- Remember & Forgot -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <a asp-action="ForgotPassword" asp-controller="Account" class="small">
+                        Forgot Password?
+                    </a>
+                </div>
+
+                <button type="submit" class="btn btn-orange w-100 py-2">
+                    Log In
+                </button>
 
             </form>
-            <!-- FORM END -->
 
-            <div class="text-center mt-3">
-                <a asp-action="Register" asp-controller="Account">Create Account</a>
+          
+
+            <!-- Bottom Text -->
+            <div class="text-center mt-4 bottom-text">
+                Don't have an account?
+                <a asp-controller="Account" asp-action="Register">Sign Up</a>
             </div>
 
         </div>

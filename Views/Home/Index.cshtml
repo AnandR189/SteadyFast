@@ -1,6 +1,176 @@
-﻿<div class="text-center mt-5">
-    <h1>Welcome to SteadyFast 🚗</h1>
-    <p class="lead">Roadside assistance system</p>
+﻿<style>
+    .home-section {
+        background: #f4f6f9;
+        padding: 60px 0;
+    }
 
-    <a asp-controller="Account" asp-action="Login" class="btn btn-primary">Get Started</a>
-</div>
+    .main-title {
+        font-weight: 700;
+    }
+
+    .sub-text {
+        color: #6c757d;
+    }
+
+    .service-card {
+        background: #e9eef5;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .service-icon {
+        font-size: 70px;
+        margin-bottom: 10px;
+    }
+
+    .work-card {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+
+    /* Auto Scroll Gallery */
+    .scroll-container {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .scroll-track {
+        display: inline-block;
+        animation: scroll 20s linear infinite;
+    }
+
+    .scroll-img {
+        width: 220px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-right: 15px;
+    }
+
+    @@keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    
+</style>
+
+<section class="home-section text-center">
+
+    <div class="container">
+
+        <!-- TITLE -->
+        <h2 class="main-title">SteadyFast</h2>
+        <p class="sub-text">
+            24/7 Online Roadside Assistance, Let’s get you back on the road fast!
+        </p>
+        <p class="fw-bold">
+            Tell us the problem and get solution in just 10 minutes.
+        </p>
+
+        <!-- SERVICES -->
+        <div class="row mt-4 g-4 justify-content-center">
+
+            <div class="col-md-3">
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h6>Car</h6>
+                    <small>Diagnose and repair all car problems</small>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="service-card">
+                    <div class="service-icon">🏍️</div>
+                    <h6>Bike</h6>
+                    <small>Find best bike repair services nearby</small>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="service-card">
+                    <div class="service-icon">🚌</div>
+                    <h6>Bus</h6>
+                    <small>Commercial vehicle roadside support</small>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- HOW IT WORKS -->
+        <h3 class="mt-5 fw-bold">How SteadyFast Works</h3>
+        <p class="sub-text">Verified professionals near you</p>
+
+        <div class="row mt-4 g-4">
+
+            <div class="col-md-3">
+                <div class="work-card">
+                    🔍
+                    <h6 class="mt-2">Search & Select</h6>
+                    <small>Find mechanics by location</small>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="work-card">
+                    📅
+                    <h6 class="mt-2">Book a Service</h6>
+                    <small>Choose time & request help</small>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="work-card">
+                    📍
+                    <h6 class="mt-2">Track Repair</h6>
+                    <small>Real-time updates</small>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="work-card">
+                    💳
+                    <h6 class="mt-2">Pay & Rate</h6>
+                    <small>Secure pay and review</small>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COMMON PROBLEMS -->
+        <h3 class="mt-5 fw-bold">Common Roadside Problems</h3>
+
+        <div class="scroll-container">
+            <div class="scroll-track">
+
+                <!-- Duplicate images for smooth loop -->
+                <img src="/Images/Problems/battery.jpg" class="scroll-img" />
+                <img src="/Images/Problems/breakdown.jpg" class="scroll-img" />
+                <img src="/Images/Problems/fuel.jpg" class="scroll-img" />
+                <img src="/Images/Problems/glass.jpg" class="scroll-img" />
+
+                <img src="/Images/Problems/let_us_help_you.jpg" class="scroll-img" />
+                <img src="/Images/Problems/oil.jpg" class="scroll-img" />
+                <img src="/Images/Problems/truck_tyre.jpg" class="scroll-img" />
+                <img src="/Images/Problems/tyre.jpg" class="scroll-img" />
+
+            </div>
+        </div>
+
+    </div>
+
+</section>

@@ -1,50 +1,115 @@
-﻿
-@{
-	ViewData["Title"] = "Register";
-}
+﻿    @{
+        ViewData["Title"] = "Register";
+    }
 
-@model SteadyFast.Models.Account.User
+    @model SteadyFast.Models.Account.User
 
-<div class="row justify-content-center">
-    <div class="col-md-5">
+    <style>
+        body {
+            background-color: #eef1f5;
+        }
 
-        <div class="card shadow">
-            <div class="card-body">
+        .register-wrapper {
+            min-height: 90vh;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+		    /* margin-top: auto; */
+        }
 
-                <h3 class="text-center mb-3">Register</h3>
+        .register-card {
+            width: 100%;
+            max-width: 480px;
+            border: 2px solid #ff7a1a;
+            border-radius: 18px;
+		    
+        }
+
+        .brand-title {
+            font-weight: 600;
+        }
+
+        .brand-subtitle {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #ff7a1a;
+            box-shadow: 0 0 0 0.2rem rgba(255, 122, 26, 0.25);
+        }
+
+        .btn-orange {
+            background-color: #ff7a1a;
+            color: white;
+            font-weight: 500;
+            border-radius: 8px;
+        }
+
+            .btn-orange:hover {
+                background-color: #e66a00;
+                color: white;
+            }
+
+        .login-text {
+            font-size: 14px;
+        }
+
+            .login-text a {
+                color: #0d6efd;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+                .login-text a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+
+    <div class="register-wrapper">
+        <div class="card shadow register-card">
+            <div class="card-body p-4">
+
+                <!-- Brand Title -->
+                <div class="text-center mb-4">
+                    <h3 class="brand-title">SteadyFast</h3>
+                    <div class="brand-subtitle">Create your account</div>
+                </div>
 
                 <form method="post">
 
                     <div class="mb-3">
-                        <label>Name</label>
-                        <input asp-for="Name" class="form-control" />
+                        <input asp-for="Name" class="form-control" placeholder="Full Name" />
                     </div>
 
                     <div class="mb-3">
-                        <label>Email</label>
-                        <input asp-for="Email" class="form-control" />
+                        <input asp-for="Email" class="form-control" placeholder="Email Address" />
                     </div>
 
                     <div class="mb-3">
-                        <label>Password</label>
-                        <input asp-for="Password" type="password" class="form-control" />
+                        <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
                     </div>
 
-                    <div class="mb-3">
-                        <label>Role</label>
+                    <div class="mb-4">
                         <select asp-for="Role" class="form-select">
                             <option value="Client">Client</option>
                             <option value="Mechanic">Mechanic</option>
-                            <option value="Admin">Admin</option>
                         </select>
                     </div>
 
-                    <button class="btn btn-success w-100">Register</button>
+                    <button type="submit" class="btn btn-orange w-100 py-2">
+                        Sign Up
+                    </button>
 
                 </form>
 
+                <!-- Bottom Login Text -->
+                <div class="text-center mt-4 login-text">
+                    Already have an account?
+                    <a asp-controller="Account" asp-action="Login">Login</a>
+                </div>
+
             </div>
         </div>
-
     </div>
-</div>

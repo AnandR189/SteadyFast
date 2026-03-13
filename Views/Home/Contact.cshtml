@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    body {
+        background-color: #E9EEF5;
+    }
+
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .contact-title {
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .form-control:focus {
+        border-color: #ff7a1a;
+        box-shadow: 0 0 0 0.2rem rgba(255, 122, 26, 0.25);
+    }
+
+    .btn-orange {
+        background-color: #ff7a1a;
+        color: white;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+
+        .btn-orange:hover {
+            background-color: #e66a00;
+            color: white;
+        }
+
+    .contact-info {
+        border: 2px solid #ff7a1a;
+        border-radius: 12px;
+        padding: 25px;
+        background-color: #ffffff;
+    }
+
+        .contact-info h5 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+</style>
+
+<div class="container contact-section">
+    <h2 class="contact-title">Get in Touch</h2>
+
+    <div class="row">
+
+        <!-- Left Side Form -->
+        <div class="col-md-7">
+
+            <form method="post">
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required />
+                </div>
+
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email Address" required />
+                </div>
+
+                <div class="mb-3">
+                    <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-orange w-100">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Right Side Contact Info -->
+        <div class="col-md-5 mt-4 mt-md-0">
+
+            <div class="contact-info">
+                <h5>Contact Information</h5>
+                <p>123 Project Street, College Campus</p>
+                <p>+91 12345 67890</p>
+                <p>support@steadyfast.com</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
